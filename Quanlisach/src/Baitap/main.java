@@ -1,5 +1,5 @@
-package Baitap;
 
+package Baitap;
 
 import java.util.ArrayList;
 
@@ -12,7 +12,7 @@ public class main {
         Sach Ly = new Sach("S02", "Vat li dai cuong", "Tran Van B", 2023, 15);
         Sach Hoa = new Sach("S03", "Hoa hoc moi truong", "Le Van C", 2021, 20);
 
-        danhSach.add(Toan); 
+        danhSach.add(Toan);
         danhSach.add(Ly);
         danhSach.add(Hoa);
 
