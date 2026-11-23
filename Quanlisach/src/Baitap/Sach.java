@@ -1,81 +1,39 @@
+
 package Baitap;
 
+import java.util.Scanner;
 
-import java.time.Year;
+public abstract class Sach {
+    protected String maSach;
+    protected String ngayNhap;
+    protected double donGia;
+    protected int soLuong;
+    protected String nhaXuatBan;
 
-public class Sach {
-    private String maSach;
-    private String tieuDe;
-    private String tacGia;
-    private int namXuatBan;
-    private int soLuong;
+    public void nhapThongTin(Scanner sc) {
+        System.out.print("Nhap ma sach: ");
+        maSach = sc.nextLine();
 
-    // Constructor co tham so
-    public Sach(String maSach, String tieuDe, String tacGia, int namXuatBan, int soLuong) {
-        this.maSach = maSach;
-        this.tieuDe = tieuDe;
-        this.tacGia = tacGia;
-        setNamXuatBan(namXuatBan);
-        setSoLuong(soLuong);
+        System.out.print("Nhap ngay nhap (dd/mm/yyyy): ");
+        ngayNhap = sc.nextLine();
+
+        System.out.print("Nhap don gia: ");
+        donGia = Double.parseDouble(sc.nextLine());
+
+        System.out.print("Nhap so luong: ");
+        soLuong = Integer.parseInt(sc.nextLine());
+
+        System.out.print("Nhap nha xuat ban: ");
+        nhaXuatBan = sc.nextLine();
     }
 
-    // Getter va Setter maSach
-    public String getMaSach() {
-        return maSach;
-    }
-
-    public void setMaSach(String maSach) {
-        this.maSach = maSach;
-    }
-
-    // Getter va Setter tieuDe
-    public String getTieuDe() {
-        return tieuDe;
-    }
-
-    public void setTieuDe(String tieuDe) {
-        this.tieuDe = tieuDe;
-    }
-
-    // Getter va Setter tacGia
-    public String getTacGia() {
-        return tacGia;
-    }
-
-    public void setTacGia(String tacGia) {
-        this.tacGia = tacGia;
-    }
-
-    // Getter va Setter namXuatBan
-    public int getNamXuatBan() {
-        return namXuatBan;
-    }
-
-    public void setNamXuatBan(int namXuatBan) {
-        int currentYear = Year.now().getValue();
-
-        if (namXuatBan > 0 && namXuatBan <= currentYear) {
-            this.namXuatBan = namXuatBan;
-        }
-    }
-
-    // Getter va Setter soLuong
-    public int getSoLuong() {
-        return soLuong;
-    }
-
-    public void setSoLuong(int soLuong) {
-        if (soLuong >= 0) {
-            this.soLuong = soLuong;
-        }
-    }
-
-    // Hien thi thong tin sach
-    public void hienThiThongTin() {
+    public void xuatThongTin() {
         System.out.println("Ma sach: " + maSach);
-        System.out.println("Tieu de: " + tieuDe);
-        System.out.println("Tac gia: " + tacGia);
-        System.out.println("Nam xuat ban: " + namXuatBan);
+        System.out.println("Ngay nhap: " + ngayNhap);
+        System.out.println("Don gia: " + donGia);
         System.out.println("So luong: " + soLuong);
+        System.out.println("Nha xuat ban: " + nhaXuatBan);
     }
+
+    public abstract double thanhTien();
 }
